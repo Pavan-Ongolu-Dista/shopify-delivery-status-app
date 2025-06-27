@@ -101,6 +101,10 @@ app.post('/api/order/:id/delivery-info', async (req, res) => {
   }
 });
 
+app.use('/', (req,res) => {
+  res.send('Welcome to Pavs server');
+});
+
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
