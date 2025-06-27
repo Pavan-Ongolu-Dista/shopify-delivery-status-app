@@ -120,7 +120,7 @@ router.get("/auth/callback", async (req) => {
   // See: https://shopify.dev/docs/apps/auth/get-access-tokens/authorization-code#step-3-validate-the-hmac
 
   // 2. Exchange code for access token
-  const tokenUrl = https://${shop}/admin/oauth/access_token;
+  const tokenUrl = `https://${shop}/admin/oauth/access_token`;
 
   const tokenRes = await fetch(tokenUrl, {
     method: "POST",
@@ -155,7 +155,7 @@ router.get('/', (req) => {
     return new Response('Missing ?shop= parameter', { status: 400 });
   }
 
-  const installUrl = https://${shop}/admin/oauth/authorize?client_id=${SHOPIFY_API_KEY}&scope=${SCOPES}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&state=123456&grant_options[]=per-user;
+  const installUrl = `https://${shop}/admin/oauth/authorize?client_id=${SHOPIFY_API_KEY}&scope=${SCOPES}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&state=123456&grant_options[]=per-user`;
 
   return Response.redirect(installUrl, 302);
 });
