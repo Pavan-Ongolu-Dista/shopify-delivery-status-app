@@ -100,6 +100,9 @@ app.post('/api/order/:id/delivery-info', async (req, res) => {
     res.status(500).json({ error: error.message, details: error.response?.data });
   }
 });
+app.get('/', (req, res) => {
+  res.send("Welcome to Pavan's App");
+});
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
