@@ -34,7 +34,7 @@ function App() {
     setError("");
     setSuccess("");
     try {
-      const res = await axios.get(`http://localhost:3001/api/order/${orderId}`);
+      const res = await axios.get(`process.env.REACT_APP_API_URL/api/order/${orderId}`);
       const items = res.data.lineItems.edges.map((edge) => edge.node);
       setProducts(items);
       setDeliveryInfo(
@@ -64,7 +64,7 @@ function App() {
     setSuccess("");
     try {
       await axios.post(
-        `http://localhost:3001/api/order/${orderId}/delivery-info`,
+        `process.env.REACT_APP_API_URL/api/order/${orderId}/delivery-info`,
         { deliveryInfo }
       );
       setSuccess("Delivery info saved successfully!");
