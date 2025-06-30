@@ -64,7 +64,7 @@ function App() {
     setSuccess("");
     try {
       await axios.post(
-        `process.env.REACT_APP_API_URL/api/order/${orderId}/delivery-info`,
+        `https://shopify-delivery-status-app.onrender.com/api/order/${orderId}/delivery-info`,
         { deliveryInfo }
       );
       setSuccess("Delivery info saved successfully!");
