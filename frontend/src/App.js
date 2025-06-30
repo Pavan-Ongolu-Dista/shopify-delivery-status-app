@@ -34,7 +34,7 @@ function App() {
     setError("");
     setSuccess("");
     try {
-      const res = await axios.get(`process.env.REACT_APP_API_URL/api/order/${orderId}`);
+      const res = await axios.get(`https://shopify-delivery-status-app.onrender.com/api/order/${orderId}`);
       const items = res.data.lineItems.edges.map((edge) => edge.node);
       setProducts(items);
       setDeliveryInfo(
